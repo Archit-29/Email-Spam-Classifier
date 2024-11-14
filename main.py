@@ -13,9 +13,9 @@ except LookupError:
 
 
 try:
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('tokenizers/punkt-tab')
 except LookupError:
-    nltk.download('punkt')
+    nltk.download('punkt-tab')
 ps = PorterStemmer()
 
 
