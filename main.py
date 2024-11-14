@@ -12,9 +12,13 @@ except LookupError:
     nltk.download('stopwords')
 import os
 from nltk.tokenize import word_tokenize
-
 nltk_data_path = os.path.join(os.path.dirname(__file__), 'punkt')
 nltk.data.path.append(nltk_data_path)
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    print("Punkt tokenizer not found. Please check the path.")
 
 ps = PorterStemmer()
 
