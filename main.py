@@ -7,12 +7,15 @@ from nltk.stem.porter import PorterStemmer
 
 try:
     nltk.data.find('corpora/stopwords')
-    nltk.data.find('tokenizers/punkt-tab')
 
 except LookupError:
     nltk.download('stopwords')
-    nltk.download('punkt-tab')
 
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 ps = PorterStemmer()
 
 
